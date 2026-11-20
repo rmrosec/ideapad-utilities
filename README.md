@@ -1,8 +1,7 @@
 # Ideapad Utilities
 
 ## Lenovo Vantage Utilities for Linux
-This is my first venture into Bash scripting. As someone who uses Linux, I found that one of my biggest issues was the fact that my Ryzen 4000 Ideapad laptop had poor battery life and I was unable to access features included in Lenovo Vantage, which is for Windows only. This script uses the `acpi_call` kernel module to change performance modes and rapid charge modes. It should be noted that this script ONLY works for Ryzen 4000 series Ideapads and has not been tested on all models. It is currently untested as I've been using WSL instead of a native Linux install this semester.
-
+Small CLI script that provides features from Lenovo Vantage (Windows only) for Linux users using the `acpi_call` kernel module. Works with Ryzen 4000 Ideapad laptops. The different performance mode settings have anecdotally had far more impact on Linux than Windows.
 ## Features
 Adjusting performance modes - options include:
 1. Intelligent Cooling
@@ -15,7 +14,9 @@ Adjusting rapid charge modes - 1: on, 2: off
 Depending on your system, either `acpi_call`, `acpi_call-lts`, `acpi_call-dkms`. 
 
 ## Running the Script
-The script requires superuser elevations. To run the script, run `sudo ./utils.sh` in the script's directory. If this does not work, ensure it is an exectuable by running `chmod +x utils.sh`. Without any flags, the program should display an error message if the kernel module is not installed and loaded. Note that the module can be loaded after install with `sudo modprobe acpi_call`.  Otherwise, it will present the current mode and a help message.
+ `sudo ./utils.sh`
+If required `chmod +x utils.sh`.
+Note that the module can be loaded after install with `sudo modprobe acpi_call`.
 
 ## Script Usage and Parameters
 Flags: `-p` `-r`
